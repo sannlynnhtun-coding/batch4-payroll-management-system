@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Batch4.Api.PayrollManagementSystem", "Batch4.Api.PayrollManagementSystem\Batch4.Api.PayrollManagementSystem.csproj", "{43B7516A-67D9-43E5-933B-409F931CC09B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Batch4.Api.PayrollManagementSystem", "Batch4.Api.PayrollManagementSystem\Batch4.Api.PayrollManagementSystem.csproj", "{43B7516A-67D9-43E5-933B-409F931CC09B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Batch4.Api.PayrollManagementSystem.DataAccess", "Batch4.Api.PayrollManagementSystem.DataAccess\Batch4.Api.PayrollManagementSystem.DataAccess.csproj", "{132994A8-7819-400A-A5CF-60449796E8D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Batch4.Api.PayrollManagementSystem.BusinessLogic", "Batch4.Api.PayrollManagementSystem.BusinessLogic\Batch4.Api.PayrollManagementSystem.BusinessLogic.csproj", "{1F835DEC-0248-478F-A872-3EFAB4255CBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{43B7516A-67D9-43E5-933B-409F931CC09B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43B7516A-67D9-43E5-933B-409F931CC09B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43B7516A-67D9-43E5-933B-409F931CC09B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{132994A8-7819-400A-A5CF-60449796E8D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{132994A8-7819-400A-A5CF-60449796E8D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{132994A8-7819-400A-A5CF-60449796E8D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{132994A8-7819-400A-A5CF-60449796E8D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F835DEC-0248-478F-A872-3EFAB4255CBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F835DEC-0248-478F-A872-3EFAB4255CBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F835DEC-0248-478F-A872-3EFAB4255CBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F835DEC-0248-478F-A872-3EFAB4255CBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
