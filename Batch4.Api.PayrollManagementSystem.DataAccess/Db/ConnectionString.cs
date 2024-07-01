@@ -12,8 +12,8 @@ namespace Batch4.Api.PayrollManagementSystem.DataAccess.Db
 
         public static SqlConnectionStringBuilder SqlConnectionStringBuilder = new SqlConnectionStringBuilder()
         {
-            DataSource = "DHO-LP-23-006\\SQLSERVER2022",
-            InitialCatalog = "DotNetTrainging4",
+            DataSource = "DESKTOP-SOD2VVR",
+            InitialCatalog = "DotnetTrainingBatch4",
             UserID = "sa",
             Password = "sa@123",
             TrustServerCertificate = true

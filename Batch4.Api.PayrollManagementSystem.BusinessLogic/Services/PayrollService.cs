@@ -27,5 +27,17 @@ namespace Batch4.Api.PayrollManagementSystem.BusinessLogic.Services
             var result =await _employeeDA.CreateEmployee(requestModel);
             return result;
         }
+
+        public async Task<int> UpdateEmployee(int id, Employee requestModel)
+        {
+            var result = await _employeeDA.UpdateEmployee(id, requestModel);
+            return result;
+        }
+
+        public async Task<int> DeleteEmployee(int id)
+        {
+            var result = await _employeeDA.DeleteEmployee(id);
+            return result;
+        }
     }
 }
