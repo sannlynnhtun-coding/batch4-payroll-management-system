@@ -13,9 +13,9 @@ namespace Batch4.Api.PayrollManagementSystem.DataAccess.Services
     {
         private readonly AppDbContext _appDbContext;
 
-        public EmployeeDataAccess(AppDbContext appDbContext)
+        public EmployeeDataAccess()
         {
-            _appDbContext = appDbContext;
+            _appDbContext = new AppDbContext();
         }
 
         public async Task<List<Employee>> GetEmployees()
@@ -36,7 +36,7 @@ namespace Batch4.Api.PayrollManagementSystem.DataAccess.Services
             var result = await _appDbContext.SaveChangesAsync();
             return result;
         }
-
+      
         public async Task<int> UpdateEmployee(int id, Employee requestEmployee)
         {
             var existingEmployee = await GetEmployeeById(id) ?? throw new Exception("Employee Not Found");
