@@ -9,15 +9,13 @@ namespace Batch4.Api.PayrollManagementSystem.DataAccess.Db
 {
     internal static class ConnectionString
     {
-
-        public static SqlConnectionStringBuilder SqlConnectionStringBuilder = new SqlConnectionStringBuilder()
+        public static SqlConnectionStringBuilder SqlConnectionStringBuilder = new()
         {
-            DataSource = "DESKTOP-SOD2VVR",
-            InitialCatalog = "DotnetTrainingBatch4",
-            UserID = "sa",
-            Password = "sa@123",
+            DataSource = "",
+            InitialCatalog = "DotNetTrainging4",
+            UserID = "",
+            Password = "",
             TrustServerCertificate = true
         };
-
     }
 }

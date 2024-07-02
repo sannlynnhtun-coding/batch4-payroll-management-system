@@ -47,6 +47,5 @@ namespace Batch4.Api.PayrollManagementSystem.Controllers
             return Ok(message);
         }
 
-
     }
 }
