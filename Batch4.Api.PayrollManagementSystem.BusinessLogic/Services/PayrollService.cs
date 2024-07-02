@@ -46,8 +46,8 @@ namespace Batch4.Api.PayrollManagementSystem.BusinessLogic.Services
         {
             var result = await _employeeDA.DeleteEmployee(id);
             return result;
-
-        public async Task<decimal> CalculatePayroll(int id, Employee requestEmployee)
+        }
+        public async Task<decimal?> CalculatePayroll(int id, Employee requestEmployee)
         {
             var existingEmployeeByRate = await _employeeDA.GetEmployeeByRate(id) ?? throw new Exception("Employee Not Found");
             var existingEmployeeByHour = await _employeeDA.GetEmployeeByWork(id) ?? throw new Exception("Employee Not Found");
