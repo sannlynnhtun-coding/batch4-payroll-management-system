@@ -23,6 +23,12 @@ namespace Batch4.Api.PayrollManagementSystem.BusinessLogic.Services
             var lst =await _employeeDA.GetEmployees();
             return lst;
         }
+      
+        public async Task<Employee?> GetbyEmployeeId(int id)
+        {
+            var item = await _employeeDA.GetEmployeeById(id);         
+            return item;
+        }
 
         public async Task<int> CreateEmployee(Employee requestModel)
         {
@@ -30,11 +36,16 @@ namespace Batch4.Api.PayrollManagementSystem.BusinessLogic.Services
             return result;
         }
 
-        public async Task<Employee?> GetbyEmployeeId(int id)
+        public async Task<int> UpdateEmployee(int id, Employee requestModel)
         {
-            var item = await _employeeDA.GetEmployeeById(id);         
-            return item;
+            var result = await _employeeDA.UpdateEmployee(id, requestModel);
+            return result;
         }
+
+        public async Task<int> DeleteEmployee(int id)
+        {
+            var result = await _employeeDA.DeleteEmployee(id);
+            return result;
 
         public async Task<decimal> CalculatePayroll(int id, Employee requestEmployee)
         {
