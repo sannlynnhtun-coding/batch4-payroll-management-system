@@ -30,6 +30,18 @@ namespace Batch4.Api.PayrollManagementSystem.DataAccess.Services
             return employee;
         }
 
+        public async Task<Employee?> GetEmployeeByRate(int id)
+        {
+            var employee = await _appDbContext.Employees.AsNoTracking().FirstOrDefaultAsync(e => e.HourlyRate == id);
+            return employee;
+        }
+        public async Task<Employee?> GetEmployeeByWork(int id)
+        {
+            var employee = await _appDbContext.Employees.AsNoTracking().FirstOrDefaultAsync(e => e.HoursWork == id);
+            return employee;
+
+        }
+
         public async Task<int> CreateEmployee(Employee employee)
         {
             await _appDbContext.Employees.AddAsync(employee);
@@ -57,7 +69,7 @@ namespace Batch4.Api.PayrollManagementSystem.DataAccess.Services
             var existingEmployee = await GetEmployeeById(id) ?? throw new Exception("Employee Not Found");
             _appDbContext.Entry(existingEmployee).State = EntityState.Deleted;
             _appDbContext.Employees.Remove(existingEmployee);
-
+            
             var result = await _appDbContext.SaveChangesAsync();
             return result;
         }
