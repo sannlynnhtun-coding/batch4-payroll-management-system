@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Batch4.Api.PayrollManagementSystem.DataAccess.Db
 {
-    public class AppDbContext : DbContext
+    internal class AppDbContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

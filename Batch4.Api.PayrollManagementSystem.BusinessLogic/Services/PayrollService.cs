@@ -1,4 +1,4 @@
-﻿using Batch4.Api.PayrollManagementSystem.DataAccess.Db;
+using Batch4.Api.PayrollManagementSystem.DataAccess.Db;
 using Batch4.Api.PayrollManagementSystem.DataAccess.Models;
 using Batch4.Api.PayrollManagementSystem.DataAccess.Services;
 using Microsoft.EntityFrameworkCore;
@@ -30,7 +30,6 @@ namespace Batch4.Api.PayrollManagementSystem.BusinessLogic.Services
             return result;
         }
 
-        
         public async Task<Employee?> GetbyEmployeeId(int id)
         {
             var item = await _employeeDA.GetEmployeeById(id);         

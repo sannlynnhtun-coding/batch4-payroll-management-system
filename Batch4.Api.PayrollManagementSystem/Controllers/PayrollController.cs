@@ -29,8 +29,5 @@ namespace Batch4.Api.PayrollManagementSystem.Controllers
             string message = result > 0 ? "Create Successful" : "Create Failed";
             return Ok(message);
         }
-
-
-
     }
 }

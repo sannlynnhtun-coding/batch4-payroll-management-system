@@ -48,7 +48,7 @@ namespace Batch4.Api.PayrollManagementSystem.DataAccess.Services
             var result = await _appDbContext.SaveChangesAsync();
             return result;
         }
-
+      
         public async Task<int> UpdateEmployee(int id, Employee requestEmployee)
         {
             var existingEmployee = await GetEmployeeById(id) ?? throw new Exception("Employee Not Found");

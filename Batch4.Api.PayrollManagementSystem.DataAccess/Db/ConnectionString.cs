@@ -7,16 +7,15 @@ using System.Threading.Tasks;
 
 namespace Batch4.Api.PayrollManagementSystem.DataAccess.Db
 {
-    internal class ConnectionString
+    internal static class ConnectionString
     {
         public static SqlConnectionStringBuilder SqlConnectionStringBuilder = new()
         {
-            DataSource = ".",
-            InitialCatalog = "DotNetTrainingBatch4",
-            UserID = "sa",
-            Password = "cho123!",
+            DataSource = "",
+            InitialCatalog = "DotNetTrainging4",
+            UserID = "",
+            Password = "",
             TrustServerCertificate = true
-
         };
     }
 }
