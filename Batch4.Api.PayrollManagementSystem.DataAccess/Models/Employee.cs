@@ -15,7 +15,12 @@ namespace Batch4.Api.PayrollManagementSystem.DataAccess.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public decimal HourlyRate { get; set; }
-        public decimal? HoursWork { get; set; }
+        public decimal HoursWork { get; set; }
+
+        public decimal CalculatePay()
+        {
+            return HourlyRate * HoursWork;
+        }
     }
     
 }

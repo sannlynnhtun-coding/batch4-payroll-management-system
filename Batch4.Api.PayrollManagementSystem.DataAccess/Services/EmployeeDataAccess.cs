@@ -30,18 +30,6 @@ namespace Batch4.Api.PayrollManagementSystem.DataAccess.Services
             return employee;
         }
 
-        public async Task<Employee?> GetEmployeeByRate(int id)
-        {
-            var employee = await _appDbContext.Employees.AsNoTracking().FirstOrDefaultAsync(e => e.HourlyRate == id);
-            return employee;
-        }
-        public async Task<Employee?> GetEmployeeByWork(int id)
-        {
-            var employee = await _appDbContext.Employees.AsNoTracking().FirstOrDefaultAsync(e => e.HoursWork == id);
-            return employee;
-
-        }
-
         public async Task<int> CreateEmployee(Employee employee)
         {
             await _appDbContext.Employees.AddAsync(employee);
