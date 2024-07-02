@@ -18,41 +18,11 @@ namespace Batch4.Api.PayrollManagementSystem.BusinessLogic.Services
             _employeeDA = new EmployeeDataAccess();
         }
 
-        public async Task<List<Employee>> GetEmployees()
-        {
-            var lst =await _employeeDA.GetEmployees();
-            return lst;
-        }
-      
-        public async Task<Employee?> GetbyEmployeeId(int id)
-        {
-            var item = await _employeeDA.GetEmployeeById(id);         
-            return item;
-        }
-
-        public async Task<int> CreateEmployee(Employee requestModel)
-        {
-            var result =await _employeeDA.CreateEmployee(requestModel);
-            return result;
-        }
-
-        public async Task<int> UpdateEmployee(int id, Employee requestModel)
-        {
-            var result = await _employeeDA.UpdateEmployee(id, requestModel);
-            return result;
-        }
-
-        public async Task<int> DeleteEmployee(int id)
-        {
-            var result = await _employeeDA.DeleteEmployee(id);
-            return result;
-        }
         public async Task<decimal?> CalculatePayroll(int id, Employee requestEmployee)
         {
             var existingEmployeeByRate = await _employeeDA.GetEmployeeByRate(id) ?? throw new Exception("Employee Not Found");
             var existingEmployeeByHour = await _employeeDA.GetEmployeeByWork(id) ?? throw new Exception("Employee Not Found");
             var amt = requestEmployee.HourlyRate * existingEmployeeByHour.HoursWork;
-
             return amt;
         }
     }

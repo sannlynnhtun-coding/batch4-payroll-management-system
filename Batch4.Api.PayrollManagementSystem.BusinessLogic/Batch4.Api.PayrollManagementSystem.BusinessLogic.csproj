@@ -10,8 +10,4 @@
     <ProjectReference Include="..\Batch4.Api.PayrollManagementSystem.DataAccess\Batch4.Api.PayrollManagementSystem.DataAccess.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>
