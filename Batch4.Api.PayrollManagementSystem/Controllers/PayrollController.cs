@@ -11,9 +11,9 @@ namespace Batch4.Api.PayrollManagementSystem.Controllers
     public class PayrollController : ControllerBase
     {
         private readonly PayrollService _payrollService;
-        public PayrollController()
+        public PayrollController(PayrollService payrollService)
         {
-            _payrollService = new PayrollService();
+            _payrollService = payrollService;
         }
 
     }
