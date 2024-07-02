@@ -10,25 +10,27 @@ namespace Batch4.Api.PayrollManagementSystem.Controllers
     public class PayrollController : ControllerBase
     {
         private readonly PayrollService _payrollService;
-        public PayrollController(PayrollService payrollService)
+        public PayrollController()
         {
-            _payrollService = payrollService;
+            _payrollService = new PayrollService();
         }
 
         [HttpGet]
         public async Task<IActionResult> Read()
         {
-            var list = await _payrollService.GetEmployees();
+            var list =await _payrollService.GetEmployees();
             return Ok(list);
         }
 
         [HttpPost]
         public async Task<IActionResult> Create(Employee employee)
         {
-            var result = await _payrollService.CreateEmployee(employee);
+            var result =await _payrollService.CreateEmployee(employee);
             string message = result > 0 ? "Create Successful" : "Create Failed";
             return Ok(message);
         }
+
+
 
     }
 }

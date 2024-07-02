@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Batch4.Api.PayrollManagementSystem.DataAccess.Models
 {
+    [Table("Employee")]
     public class Employee
     {
         public int Id { get; set; }

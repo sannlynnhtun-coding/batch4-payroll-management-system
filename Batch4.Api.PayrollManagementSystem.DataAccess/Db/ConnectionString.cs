@@ -16,6 +16,7 @@ namespace Batch4.Api.PayrollManagementSystem.DataAccess.Db
             UserID = "sa",
             Password = "cho123!",
             TrustServerCertificate = true
+
         };
     }
 }
