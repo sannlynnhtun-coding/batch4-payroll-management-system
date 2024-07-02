@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\Batch4.Api.PayrollManagementSystem.DataAccess\Batch4.Api.PayrollManagementSystem.DataAccess.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Batch4.Api.PayrollManagementSystem.DataAccess\Batch4.Api.PayrollManagementSystem.DataAccess.csproj" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

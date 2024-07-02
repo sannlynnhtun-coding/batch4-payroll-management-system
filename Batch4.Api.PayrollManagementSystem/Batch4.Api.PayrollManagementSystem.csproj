@@ -12,11 +12,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\Batch4.Api.PayrollManagementSystem.BusinessLogic\Batch4.Api.PayrollManagementSystem.BusinessLogic.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Batch4.Api.PayrollManagementSystem.BusinessLogic\Batch4.Api.PayrollManagementSystem.BusinessLogic.csproj" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

@@ -11,11 +11,11 @@ namespace Batch4.Api.PayrollManagementSystem.DataAccess.Db
     {
         public static SqlConnectionStringBuilder SqlConnectionStringBuilder = new()
         {
-            DataSource = "",
-            InitialCatalog = "DotnetTrainingBatch4",
-            UserID = "",
-            Password = "",
-            TrustServerCertificate = true,
+            DataSource = ".",
+            InitialCatalog = "DotNetTrainingBatch4",
+            UserID = "sa",
+            Password = "cho123!",
+            TrustServerCertificate = true
         };
     }
 }
