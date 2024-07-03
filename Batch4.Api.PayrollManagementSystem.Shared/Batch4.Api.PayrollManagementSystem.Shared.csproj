@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Batch4.Api.PayrollManagementSystem.DataAccess\Batch4.Api.PayrollManagementSystem.DataAccess.csproj" />
-    <ProjectReference Include="..\Batch4.Api.PayrollManagementSystem.Shared\Batch4.Api.PayrollManagementSystem.Shared.csproj" />
   </ItemGroup>
 
 </Project>
