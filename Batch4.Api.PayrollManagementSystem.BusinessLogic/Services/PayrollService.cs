@@ -1,6 +1,7 @@
 using Batch4.Api.PayrollManagementSystem.DataAccess.Db;
 using Batch4.Api.PayrollManagementSystem.DataAccess.Models;
 using Batch4.Api.PayrollManagementSystem.DataAccess.Services;
+using Batch4.Api.PayrollManagementSystem.Shared.DTOs.Response;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,24 @@ namespace Batch4.Api.PayrollManagementSystem.BusinessLogic.Services
         public PayrollService(EmployeeDataAccess employeeDataAccess)
         {
             _employeeDA = employeeDataAccess;
+        }
+
+        public async Task<TotalPayrollResponse> GenerateTotalPayAmount()
+        {
+            var employees = await _employeeDA.GetEmployees();
+
+            var totalPay = employees.Sum(employee => employee.CalculatePay());
+            var payrollPerEmployees = employees.Select(employee => new PayrollPerEmployee
+            {
+                Employee = employee,
+                EmployeePay = employee.CalculatePay()
+            }).ToList();
+
+            return new TotalPayrollResponse
+            {
+                TotalPayAmount = totalPay,
+                PayrollPerEmployees = payrollPerEmployees
+            };
         }
 
         public async Task<decimal> CalculateEmployeePayById(int employeeId)

@@ -16,6 +16,13 @@ namespace Batch4.Api.PayrollManagementSystem.Controllers
             _payrollService = payrollService;
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GenerateTotalPayAmount()
+        {
+            var totalPayrollResponse = await _payrollService.GenerateTotalPayAmount();
+            return Ok(totalPayrollResponse);
+        }
+
         [HttpGet("{employeeId}")]
         public async Task<IActionResult> CalculateEmployeePayById(int employeeId)
         {
