@@ -5,17 +5,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Batch4.Api.PayrollManagementSystem.Shared.DTOs.Response
+namespace Batch4.Api.PayrollManagementSystem.Shared.DTOs.Payrolls
 {
     public class TotalPayrollResponse
     {
-        public List<PayrollPerEmployee> PayrollPerEmployees {  get; set; }
+        public List<PayrollPerEmployee> PayrollPerEmployees { get; set; }
         public decimal TotalPayAmount { get; set; }
     }
 
     public class PayrollPerEmployee
     {
         public Employee Employee { get; set; }
-        public decimal EmployeePay {  get; set; }
+        public decimal EmployeePay { get; set; }
     }
 }

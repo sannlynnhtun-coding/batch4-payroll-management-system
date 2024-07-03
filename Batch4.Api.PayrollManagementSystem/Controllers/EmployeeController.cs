@@ -1,5 +1,6 @@
 ﻿using Batch4.Api.PayrollManagementSystem.BusinessLogic.Services;
 using Batch4.Api.PayrollManagementSystem.DataAccess.Models;
+using Batch4.Api.PayrollManagementSystem.Shared.DTOs.Employees;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,7 +28,7 @@ namespace Batch4.Api.PayrollManagementSystem.Controllers
         public async Task<IActionResult> GetEmployeeById(int id)
         {
             var employee = await _employeeService.GetbyEmployeeId(id);
-            if(employee is null)
+            if (employee is null)
             {
                 return NotFound();
             }
@@ -35,17 +36,17 @@ namespace Batch4.Api.PayrollManagementSystem.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(Employee employee)
+        public async Task<IActionResult> Create(EmployeeRequestDTO requestEmployee)
         {
-            var result = await _employeeService.CreateEmployee(employee);
+            var result = await _employeeService.CreateEmployee(requestEmployee);
             string message = result > 0 ? "Create Successful" : "Create Failed";
             return Ok(message);
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, Employee employee)
+        public async Task<IActionResult> Update(int id, EmployeeRequestDTO requestEmployee)
         {
-            var result = await _employeeService.UpdateEmployee(id, employee);
+            var result = await _employeeService.UpdateEmployee(id, requestEmployee);
             string message = result > 0 ? "Update Successful" : "Update Failed";
             return Ok(message);
         }

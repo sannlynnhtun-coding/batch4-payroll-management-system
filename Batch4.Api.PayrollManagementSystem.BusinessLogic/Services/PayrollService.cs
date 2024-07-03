@@ -1,7 +1,7 @@
 using Batch4.Api.PayrollManagementSystem.DataAccess.Db;
 using Batch4.Api.PayrollManagementSystem.DataAccess.Models;
 using Batch4.Api.PayrollManagementSystem.DataAccess.Services;
-using Batch4.Api.PayrollManagementSystem.Shared.DTOs.Response;
+using Batch4.Api.PayrollManagementSystem.Shared.DTOs.Payrolls;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -37,10 +37,15 @@ namespace Batch4.Api.PayrollManagementSystem.BusinessLogic.Services
             };
         }
 
-        public async Task<decimal> CalculateEmployeePayById(int employeeId)
+        public async Task<PayrollPerEmployee> CalculateEmployeePayById(int employeeId)
         {
             var employee = await _employeeDA.GetEmployeeById(employeeId) ?? throw new Exception("Employee Not Found");
-            return employee.CalculatePay();
+
+            return new PayrollPerEmployee()
+            {
+                Employee = employee,
+                EmployeePay = employee.CalculatePay(),
+            };
         }
     }
 }

@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Batch4.Api.PayrollManagementSystem.BusinessLogic\Batch4.Api.PayrollManagementSystem.BusinessLogic.csproj" />
+    <ProjectReference Include="..\Batch4.Api.PayrollManagementSystem.Shared\Batch4.Api.PayrollManagementSystem.Shared.csproj" />
   </ItemGroup>
 
 </Project>
