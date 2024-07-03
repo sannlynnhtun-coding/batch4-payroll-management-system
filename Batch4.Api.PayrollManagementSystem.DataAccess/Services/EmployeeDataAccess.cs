@@ -36,11 +36,10 @@ namespace Batch4.Api.PayrollManagementSystem.DataAccess.Services
             var result = await _appDbContext.SaveChangesAsync();
             return result;
         }
-      
-        public async Task<int> UpdateEmployee(int id, Employee requestEmployee)
-        {
-            var existingEmployee = await GetEmployeeById(id) ?? throw new Exception("Employee Not Found");
 
+        public async Task<int> UpdateEmployee(int id, Employee requestEmployee,Employee existingEmployee)
+        {
+            //var existingEmployee = await GetEmployeeById(id) ?? throw new Exception("Employee Not Found");
             existingEmployee.HourlyRate = requestEmployee.HourlyRate;
             existingEmployee.HoursWork = requestEmployee.HoursWork;
             existingEmployee.Name = requestEmployee.Name;
@@ -57,7 +56,7 @@ namespace Batch4.Api.PayrollManagementSystem.DataAccess.Services
             var existingEmployee = await GetEmployeeById(id) ?? throw new Exception("Employee Not Found");
             _appDbContext.Entry(existingEmployee).State = EntityState.Deleted;
             _appDbContext.Employees.Remove(existingEmployee);
-            
+
             var result = await _appDbContext.SaveChangesAsync();
             return result;
         }

@@ -1,5 +1,6 @@
 using Batch4.Api.PayrollManagementSystem;
 using Batch4.Api.PayrollManagementSystem.DataAccess.Db;
+using Batch4.Api.PayrollManagementSystem.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using System;
 
@@ -27,6 +28,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.CustomExceptionMiddleware();
 
 app.UseHttpsRedirection();
 
