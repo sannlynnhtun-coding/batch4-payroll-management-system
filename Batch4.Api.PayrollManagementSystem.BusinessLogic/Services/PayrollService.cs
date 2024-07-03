@@ -1,7 +1,7 @@
 using Batch4.Api.PayrollManagementSystem.DataAccess.Db;
 using Batch4.Api.PayrollManagementSystem.DataAccess.Models;
 using Batch4.Api.PayrollManagementSystem.DataAccess.Services;
-using Batch4.Api.PayrollManagementSystem.Shared.DTOs.Payrolls;
+using Batch4.Api.PayrollManagementSystem.Dtos.Payrolls;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

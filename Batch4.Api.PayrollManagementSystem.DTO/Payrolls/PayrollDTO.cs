@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Batch4.Api.PayrollManagementSystem.Shared.DTOs.Payrolls
+namespace Batch4.Api.PayrollManagementSystem.Dtos.Payrolls
 {
     public class TotalPayrollResponse
     {

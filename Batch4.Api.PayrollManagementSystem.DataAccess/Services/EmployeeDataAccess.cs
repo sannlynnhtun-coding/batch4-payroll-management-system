@@ -1,5 +1,7 @@
 ﻿using Batch4.Api.PayrollManagementSystem.DataAccess.Db;
 using Batch4.Api.PayrollManagementSystem.DataAccess.Models;
+using Batch4.Api.PayrollManagementSystem.Shared.Constants;
+using Batch4.Api.PayrollManagementSystem.Shared.Exceptions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -30,18 +32,20 @@ namespace Batch4.Api.PayrollManagementSystem.DataAccess.Services
             return employee;
         }
 
-        public async Task<int> CreateEmployee(Employee employee)
+        public async Task CreateEmployee(Employee employee)
         {
             await _appDbContext.Employees.AddAsync(employee);
             var result = await _appDbContext.SaveChangesAsync();
-            return result;
+            if (result < 1)
+            {
+                throw new DBModifyException(EmployeeErrorMessages.CreateFail);
+            }
         }
-      
-        public async Task<int> UpdateEmployee(int id, Employee requestEmployee)
-        {
-            var existingEmployee = await GetEmployeeById(id) ?? throw new Exception("Employee Not Found");
 
-            existingEmployee.HourlyRate = requestEmployee.HourlyRate;
+        public async Task UpdateEmployee(int id, Employee requestEmployee)
+        {
+            var existingEmployee = await GetExistingEmployee(id);
+            existingEmployee!.HourlyRate = requestEmployee.HourlyRate;
             existingEmployee.HoursWork = requestEmployee.HoursWork;
             existingEmployee.Name = requestEmployee.Name;
 
@@ -49,17 +53,29 @@ namespace Batch4.Api.PayrollManagementSystem.DataAccess.Services
             _appDbContext.Employees.Update(existingEmployee);
 
             var result = await _appDbContext.SaveChangesAsync();
-            return result;
+            if (result < 1)
+            {
+                throw new DBModifyException(EmployeeErrorMessages.UpdateFail);
+            }
         }
 
-        public async Task<int> DeleteEmployee(int id)
+        public async Task DeleteEmployee(int id)
         {
-            var existingEmployee = await GetEmployeeById(id) ?? throw new Exception("Employee Not Found");
-            _appDbContext.Entry(existingEmployee).State = EntityState.Deleted;
-            _appDbContext.Employees.Remove(existingEmployee);
-            
+            var existingEmployee = await GetExistingEmployee(id);
+            _appDbContext.Entry(existingEmployee!).State = EntityState.Deleted;
+            _appDbContext.Employees.Remove(existingEmployee!);
+
             var result = await _appDbContext.SaveChangesAsync();
-            return result;
+            if (result < 1)
+            {
+                throw new DBModifyException(EmployeeErrorMessages.DeleteFail);
+            }
+        }
+
+        private async Task<Employee?> GetExistingEmployee(int id)
+        {
+            var existingEmployee = await GetEmployeeById(id) ?? throw new NotFoundException(EmployeeErrorMessages.NotFound);
+            return existingEmployee;
         }
     }
 }

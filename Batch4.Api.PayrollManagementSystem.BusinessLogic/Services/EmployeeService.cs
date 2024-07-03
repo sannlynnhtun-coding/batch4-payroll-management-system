@@ -1,7 +1,9 @@
 ﻿using Batch4.Api.PayrollManagementSystem.DataAccess.Models;
 using Batch4.Api.PayrollManagementSystem.DataAccess.Services;
-using Batch4.Api.PayrollManagementSystem.Shared.DTOs.Employees;
-using Batch4.Api.PayrollManagementSystem.Shared.Mapper;
+using Batch4.Api.PayrollManagementSystem.Dtos.Employees;
+using Batch4.Api.PayrollManagementSystem.Mapper;
+using Batch4.Api.PayrollManagementSystem.Shared.Constants;
+using Batch4.Api.PayrollManagementSystem.Shared.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,28 +29,26 @@ namespace Batch4.Api.PayrollManagementSystem.BusinessLogic.Services
 
         public async Task<Employee?> GetbyEmployeeId(int id)
         {
-            var employee = await _employeeDA.GetEmployeeById(id);
+            var employee = await _employeeDA.GetEmployeeById(id)?? throw new NotFoundException(EmployeeErrorMessages.NotFound);
             return employee;
         }
 
-        public async Task<int> CreateEmployee(EmployeeRequestDTO requestModel)
+        public async Task CreateEmployee(EmployeeRequestDTO requestModel)
         {
-            var employee = requestModel.ChangeToDBModel();
-            var result = await _employeeDA.CreateEmployee(employee);
-            return result;
+            var employee = requestModel.Change();
+            await _employeeDA.CreateEmployee(employee);
         }
 
-        public async Task<int> UpdateEmployee(int id, EmployeeRequestDTO requestModel)
+        public async Task UpdateEmployee(int id, EmployeeRequestDTO requestModel)
         {
-            var employee = requestModel.ChangeToDBModel();
-            var result = await _employeeDA.UpdateEmployee(id, employee);
-            return result;
+            var requestEmployee = requestModel.Change();
+            await _employeeDA.UpdateEmployee(id, requestEmployee);
+
         }
 
-        public async Task<int> DeleteEmployee(int id)
+        public async Task DeleteEmployee(int id)
         {
-            var result = await _employeeDA.DeleteEmployee(id);
-            return result;
+            await _employeeDA.DeleteEmployee(id);
         }
     }
 }

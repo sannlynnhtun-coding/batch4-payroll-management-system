@@ -9,7 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Batch4.Api.PayrollManagemen
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Batch4.Api.PayrollManagementSystem.BusinessLogic", "Batch4.Api.PayrollManagementSystem.BusinessLogic\Batch4.Api.PayrollManagementSystem.BusinessLogic.csproj", "{1F835DEC-0248-478F-A872-3EFAB4255CBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Batch4.Api.PayrollManagementSystem.Shared", "Batch4.Api.PayrollManagementSystem.Shared\Batch4.Api.PayrollManagementSystem.Shared.csproj", "{A17FA2E2-1AB5-440B-9018-900D02A7A16D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Batch4.Api.PayrollManagementSystem.Shared", "Batch4.Api.PayrollManagementSystem.Shared\Batch4.Api.PayrollManagementSystem.Shared.csproj", "{A17FA2E2-1AB5-440B-9018-900D02A7A16D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Batch4.Api.PayrollManagementSystem.Dtos", "Batch4.Api.PayrollManagementSystem.DTO\Batch4.Api.PayrollManagementSystem.Dtos.csproj", "{FACF44C3-AB46-49BE-B299-853E73EBC5C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Batch4.Api.PayrollManagementSystem.Mapper", "Batch4.Api.PayrollManagementSystem.Mapper\Batch4.Api.PayrollManagementSystem.Mapper.csproj", "{55F0D7A5-A3C2-4F93-A407-BBA11F6D7A89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{A17FA2E2-1AB5-440B-9018-900D02A7A16D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A17FA2E2-1AB5-440B-9018-900D02A7A16D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A17FA2E2-1AB5-440B-9018-900D02A7A16D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FACF44C3-AB46-49BE-B299-853E73EBC5C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FACF44C3-AB46-49BE-B299-853E73EBC5C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FACF44C3-AB46-49BE-B299-853E73EBC5C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FACF44C3-AB46-49BE-B299-853E73EBC5C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55F0D7A5-A3C2-4F93-A407-BBA11F6D7A89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55F0D7A5-A3C2-4F93-A407-BBA11F6D7A89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55F0D7A5-A3C2-4F93-A407-BBA11F6D7A89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55F0D7A5-A3C2-4F93-A407-BBA11F6D7A89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
