@@ -29,7 +29,7 @@ namespace Batch4.Api.PayrollManagementSystem.BusinessLogic.Services
 
         public async Task<Employee?> GetbyEmployeeId(int id)
         {
-            var employee = await _employeeDA.GetEmployeeById(id)?? throw new ("Employee Not Found");
+            var employee = await _employeeDA.GetEmployeeById(id)?? throw new NotFoundException(EmployeeErrorMessages.NotFound);
             return employee;
         }
 
@@ -46,7 +46,7 @@ namespace Batch4.Api.PayrollManagementSystem.BusinessLogic.Services
         public async Task UpdateEmployee(int id, EmployeeRequestDTO requestModel)
         {
             var requestEmployee = requestModel.ChangeToDBModel();
-            var existingEmployee = await GetbyEmployeeId(id) ?? throw new NotFoundException(EmployeeErrorMessages.NotFound);
+            var existingEmployee = await GetbyEmployeeId(id);
             var result = await _employeeDA.UpdateEmployee(id, requestEmployee, existingEmployee);
             if (result < 1)
             {

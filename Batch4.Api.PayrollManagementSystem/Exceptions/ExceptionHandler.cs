@@ -27,15 +27,14 @@ namespace Batch4.Api.PayrollManagementSystem.Exceptions
 
         private static async Task HandleExceptionAsync(HttpContext httpContext, Exception exception)
         {
-            httpContext.Response.ContentType = "application/json";
-            await httpContext.Response.WriteAsJsonAsync(exception.Message);
-
             httpContext.Response.StatusCode = exception switch
             {
-                NotFoundException => (int)HttpStatusCode.NotFound,
-                DBModifyException => (int)HttpStatusCode.InternalServerError,
+                NotFoundException _ => (int)HttpStatusCode.NotFound,
+                DBModifyException _ => (int)HttpStatusCode.InternalServerError,
                 _ => (int)HttpStatusCode.InternalServerError,
             };
+            httpContext.Response.ContentType = "application/json";
+            await httpContext.Response.WriteAsJsonAsync(new { message = exception.Message });
         }
     }
 }
