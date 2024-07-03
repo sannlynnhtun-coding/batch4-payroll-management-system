@@ -13,9 +13,9 @@ namespace Batch4.Api.PayrollManagementSystem.DataAccess.Services
     {
         private readonly AppDbContext _appDbContext;
 
-        public EmployeeDataAccess()
+        public EmployeeDataAccess(AppDbContext appDbContext)
         {
-            _appDbContext = new AppDbContext();
+            _appDbContext = appDbContext;
         }
 
         public async Task<List<Employee>> GetEmployees()

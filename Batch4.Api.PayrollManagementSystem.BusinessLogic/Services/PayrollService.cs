@@ -13,9 +13,9 @@ namespace Batch4.Api.PayrollManagementSystem.BusinessLogic.Services
     public class PayrollService
     {
         private readonly EmployeeDataAccess _employeeDA;
-        public PayrollService()
+        public PayrollService(EmployeeDataAccess employeeDataAccess)
         {
-            _employeeDA = new EmployeeDataAccess();
+            _employeeDA = employeeDataAccess;
         }
 
         public async Task<decimal> CalculateEmployeePayById(int employeeId)

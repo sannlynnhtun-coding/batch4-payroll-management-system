@@ -12,9 +12,9 @@ namespace Batch4.Api.PayrollManagementSystem.BusinessLogic.Services
     {
         private readonly EmployeeDataAccess _employeeDA;
 
-        public EmployeeService()
+        public EmployeeService(EmployeeDataAccess employeeDataAccess)
         {
-            _employeeDA = new EmployeeDataAccess();
+            _employeeDA = employeeDataAccess;
         }
 
         public async Task<List<Employee>> GetEmployees()

@@ -11,9 +11,9 @@ namespace Batch4.Api.PayrollManagementSystem.Controllers
     {
         private readonly EmployeeService _employeeService;
 
-        public EmployeeController()
+        public EmployeeController(EmployeeService employeeService)
         {
-            _employeeService = new EmployeeService();
+            _employeeService = employeeService;
         }
 
         [HttpGet]
