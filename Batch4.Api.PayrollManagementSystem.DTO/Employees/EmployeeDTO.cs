@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Batch4.Api.PayrollManagementSystem.Shared.DTOs.Employees
+namespace Batch4.Api.PayrollManagementSystem.Dtos.Employees
 {
 
     public class EmployeeRequestDTO

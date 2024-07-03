@@ -1,7 +1,7 @@
 ﻿using Batch4.Api.PayrollManagementSystem.BusinessLogic.Services;
 using Batch4.Api.PayrollManagementSystem.DataAccess.Models;
+using Batch4.Api.PayrollManagementSystem.Dtos.Employees;
 using Batch4.Api.PayrollManagementSystem.Shared.Constants;
-using Batch4.Api.PayrollManagementSystem.Shared.DTOs.Employees;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
