@@ -29,6 +29,5 @@ namespace Batch4.Api.PayrollManagementSystem.Controllers
             var payPerEmployee = await _payrollService.CalculateEmployeePayById(employeeId);
             return Ok(payPerEmployee);
         }
-
     }
 }
